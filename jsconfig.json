@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "allowJs": true
+  },
+  "html.autoCreateQuotes": {
+    "type": "boolean",
+    "scope": "resource",
+    "default": false,
+    "description": "%html.autoCreateQuotes%"
+  }
+}
