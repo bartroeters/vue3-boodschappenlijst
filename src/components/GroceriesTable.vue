@@ -22,7 +22,17 @@ const totalCost = computed(() => allProducts.value.reduce((value, {price, quanti
         <div class="price">${{ product.price }}</div>
         <div class="quantity">${{ product.quantity }}</div>
         <div class="subtotal">${{ (product.quantity * product.price).toFixed(2) }}</div>
-        <router-link :to="{ name: 'edit', params: { id: product.id } }">edit</router-link>
+        <router-link :to="
+            {
+                name: 'edit',
+                params: { id: product.id },
+                query: {
+                    // product: { 'id': 8, 'name': 'xxxxx', 'price': 'yy.yy', 'quantity': 'zz.zz' }
+                    ...product
+                }
+            }"
+            >edit
+        </router-link>
         <div>&nbsp;&nbsp;|&nbsp;&nbsp;</div>
         <div class="delete"><a @click="emit('deleteProduct', index)">delete</a></div>
     </div>

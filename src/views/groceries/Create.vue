@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import groceryForm from '@/components/GroceryForm.vue'
 import { addProduct } from '@/stores/ProductStore'
-import { id } from '@/stores/ProductStore'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -12,7 +11,8 @@ const submitForm = () => {
     router.push('/')
 }
 
-const product = ref({id: id, name: "", price: 0, quantity: 0});
+
+const product = ref({name: "", price: 0, quantity: 0});
 </script>
 
 <template>

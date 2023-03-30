@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
     <form v-if=productData @submit.prevent="submitForm">
-        <input placeholder="Add a new item to the list..." v-model="productData.name" />
+        <input v-model="productData.name" />
         <div>
             <label for="name">Price:</label>
             <input id="price" name="price" type="number" step="0.01" v-model="productData.price" />
