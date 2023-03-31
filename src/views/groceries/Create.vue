@@ -5,14 +5,12 @@ import { addProduct } from '@/stores/ProductStore'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const product = ref({name: "", price: 0, quantity: 0});
 
 const submitForm = () => {
     addProduct(product.value)
     router.push('/')
 }
-
-
-const product = ref({name: "", price: 0, quantity: 0});
 </script>
 
 <template>

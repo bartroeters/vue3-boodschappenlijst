@@ -15,7 +15,7 @@ export const id = ref(products.value.length)
 
 // getters
 export const getAllProducts = () => computed(() => products.value)
-export const getById = (id) => () => computed(() => products.value.find(product => product.id === id))
+export const getById = (id) => computed(() => products.value.find(product => product.id == id))
 
 // actions
 export const addProduct = (product) => {
@@ -25,5 +25,6 @@ export const addProduct = (product) => {
     })
 }
 
+export const editProduct = (product) => { products.value[product.id] = product }
+
 export const deleteProduct = (index) => products.value.splice(index, 1)
-export const editProduct = (index) => console.log('testing')
